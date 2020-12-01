@@ -1,0 +1,117 @@
+.service-icon{
+    width:100% !important;
+    font-size:40px ;
+    color:var(--primary)
+  }
+  .info-box-item:hover .service-icon{
+    color :var(--secondary);
+  }
+  .client-logo-item-div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:130px
+  }
+  .client-logo-item-div img{
+    width:70% !important;
+  }
+
+  .our-clients .client-logo-item-div {
+      height:100%;
+      cursor: pointer;
+  }
+
+  .our-clients .client-logo-item-div img {
+    width:100%;
+    padding:50px;
+    opacity: .5;
+    transition: all .3s;
+}
+.client-logo-item-div:hover img{
+    opacity: 1;
+}
+
+.flex{
+  display: flex;
+}
+.justify-center{
+  justify-content: center;
+}
+.w-full{
+  width:100%
+}
+
+.about-area2 .video-image-gallery{
+  margin-top: 34px;
+}
+
+.feature-item .feature__text , .info-box-item-4 .info-body .info__text{
+  height:120px;
+  transition: all .3s ;
+  overflow: hidden;
+}
+
+.feature-item:hover .feature__text , .info-box-item-4:hover .info-body .info__text{
+  height:auto;
+  overflow: hidden;
+}
+
+.faq-img img{
+  width: 100%;
+  height: auto;
+}
+
+.banner-content{
+  width: 70%;
+}
+.single-slide-item{
+  background-position: center left !important;
+}
+.single-slide-item .banner-content .section-heading .section__title{
+  text-transform: capitalize;
+}
+.service-wrap .service-nav .nav-tabs li a{
+  display: flex;
+  align-items: center;
+}
+.service-wrap .service-nav .nav-tabs li a .nav-link__text{
+  font-size: 16px;
+}
+
+
+.info-box-item .info-body .info__title a{
+  font-size: 20px ;
+}
+
+.product-heading{
+  font-size: 22px !important;
+  margin-bottom: 20px;
+}
+.single-service-area .card-wrap .card-item .card .card-body .card-chart-box .chart-box img{
+  width: 100%;
+  height: auto;
+}
+
+.product-li{
+  padding-left: 30 !important;
+  display: flex;
+  align-items: center;
+}
+
+.product-li .text {
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #7f8897;
+}
+.product-li .icon{
+  font-size: 16px;
+  
+}
+.navs svg{
+  width:50px
+}
+.navs nav div:first-child{
+display: none;
+}

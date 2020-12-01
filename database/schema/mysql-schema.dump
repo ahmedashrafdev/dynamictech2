@@ -1,0 +1,179 @@
+CREATE TABLE `migrations` (
+  `id` serial PRIMARY KEY,
+  `migration` varchar(255),
+  `batch` int
+);
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `tag` varchar(255),
+  `heading` varchar(255) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `seo` varchar(255),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `stats` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `record` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `breif` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `texts` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `key` varchar(255) UNIQUE NOT NULL,
+  `value` text,
+  `image` varchar(255),
+  `icon` varchar(255),
+  `images` text,
+  `seo` varchar(255),
+  `type` ENUM ('rich_text', 'why_choose_us' , 'faq' , 'image' , 'meta' , 'contacts' , 'social_media' , 'about' , 'video' , 'map') NOT NULL DEFAULT ("rich_text"),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `team` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `fb` varchar(255),
+  `twitter` varchar(255),
+  `seo` varchar(255),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `testemonials` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255),
+  `content` text NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `fb` varchar(255),
+  `twitter` varchar(255),
+  `seo` varchar(255),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `features` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `products` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL UNIQUE,
+  `content` text,
+  `icon` varchar(255),
+  `image` varchar(255),
+  `screenshot` varchar(255),
+  `breif` text,
+  `seo` varchar(255),
+  `parent_id` bigint(20) UNSIGNED,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+
+CREATE TABLE `pages` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `keywords` varchar(255),
+  `description` varchar(255),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `posts` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL UNIQUE,
+  `content` text NOT NULL,
+  `seo` varchar(255),
+  `image` varchar(255) NOT NULL,
+  `breif` text NOT NULL,
+  `featured` tinyint DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+CREATE TABLE `clients` (
+  `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `seo` varchar(255),
+  `featured` tinyint DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+);
+
+
+
+
+
+
+
+
+
+
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  
+
+ALTER TABLE `stats`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `texts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  
+
+ALTER TABLE `team`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `testemonials`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  
+
+ALTER TABLE `features`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  ADD FOREIGN KEY (`parent_id`) REFERENCES `products` (`id`);
+  
+
+ALTER TABLE `pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  
+
+ALTER TABLE `clients`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+
