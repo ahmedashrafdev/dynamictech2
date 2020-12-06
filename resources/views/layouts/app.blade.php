@@ -9,12 +9,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
+    @if (App::isLocale('ar'))
+    <link rel="stylesheet" href="{{ mix('css/rtl.css') }}">
+        
+    @endif
     <title>
         @yield('title')
     </title>
 </head>
 <body>
-  <!-- start loading -->
+  {{-- <!-- start loading -->
 <div id="loading">
     <div id="loading-center">
         <div id="loading-center-absolute">
@@ -23,7 +27,7 @@
             <div class="object" id="object_three"></div>
         </div>
     </div>
-</div>
+</div> --}}
 @include('layouts.navbar')
 
 @if (\Request::route()->getName() !== 'home')

@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading text-center">
-                    <h5 class="section__meta">#products</h5>
-                    <h2 class="section__title">What We offer?</h2>
+                    <h5 class="section__meta">#{{__('main.products')}}</h5>
+                    <h2 class="section__title">{{__('main.what_we_offer')}}</h2>
                     <div class="section-divider mx-auto"></div>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
@@ -44,7 +44,7 @@
                 </div><!-- end info-box-item info-box-item-4 -->
             </div><!-- end col-lg-4 -->
             @empty
-            <p class="no-products">No Products Avilable</p>
+            <p class="no-products">{{__('main.no_products_avilable')}}</p>
             @endforelse
         </div><!-- end row -->
     </div><!-- end container -->

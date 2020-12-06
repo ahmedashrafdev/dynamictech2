@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('title' , 'Home')
 
@@ -7,7 +7,14 @@
 <!--================================
          START SLIDER AREA
 =================================-->
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+
 <section class="banner-area home-page-2">
+   <h1> <a href="">edit</a></h1>
     <div class="homepage-slide1 banner-item-wrap">
         @foreach($sliders as $index => $slider)
         <div class="single-slide-item single-slide-item{{$index + 1}}">
@@ -53,9 +60,29 @@
         START ABOUT AREA
  ======================================-->
  <section class="about-area about-area3 section--padding">
+     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-6 realtive">
+                @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                <div class="edit-frame">
+                    <div class="col-md-12">
+                        <a id="home_about_btn" onclick="toggleInput('home_about')">Edit about us<i class='la la-pen'></i></a>
+                    </div>
+                </div>
                 <div class="about-item">
                     <div class="about-heading section-heading about-right">
                         <div class="section-dot"></div>
@@ -63,24 +90,119 @@
                     <h2 class="section__title">{{loadText('about_section_title')->value}}</h2>
                     </div><!-- end section-heading -->
                     <div class="section-description">
-                        <p class="section__desc">
+                        <p class="section__desc editable" id="home_about">
                            {{loadText('home_about')->value}}
                         </p>
+                        <form action="{{route('update_text' , ['slug' => 'home_about'])}}" method="POST" id="home_about_form" class="hidden admin-form">
+                          
+                            @csrf
+                            @method('PUT')
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <i class="la la-pen form-icon"></i>
+                                        <textarea class="form-control" type="text" name="value" value="{{loadText('home_about')->value}}" rows="12">{{loadText('home_about')->value}}</textarea>
+                                    </div><!-- end form-group -->
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mb-0">
+                                        <button class="theme-btn" type="submit">Submit <span class="la la-caret-right"></span></button>
+                                        <a class="theme-btn" id="home_about_cancel">cancel <span class="la la-caret-right"></span></a>
+                                    </div><!-- end form-group -->
+                                </div>
+                            </div>
+                        </form>
                     </div>
                   
                     <a title="{{$seo}}" href="{{route('about')}}" class="theme-btn">know more <span class="la la-caret-right"></span></a>
                 </div>
             </div><!-- end col-lg-6 -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 editable-actions">
+                @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                <div class="edit-frame">
+                    <div class="col-md-12">
+                        <a id="home_about_images_btn">Edit Images<i class='la la-pen'></i></a>
+                    </div>
+                </div>
                 <div class="image-box-wrap">
                     <span class="company-logo">NEXT</span>
-                    <div class="image-box">
+                    <div class="image-box" id="home_about_images">
                         @foreach (explode("," , loadText('home_about')->images) as $image)
                             <img src="{{loadImage($image)}}" alt="{{$seo}}" class="img__item">
                         @endforeach
+                        
                        
                         
                     </div><!-- end about-img-box -->
+                    <form action="{{route('update_text_images' , ['slug' => 'home_about'])}}" id="home_about_images_form" method="POST" class="hidden admin-form" enctype="multipart/form-data">
+                        
+                        @csrf
+                        @method('PUT')
+
+                        <div class="row">
+
+                            <div class="col-md-10">
+
+                                <input type="file" name="file[]" accept="image/*" multiple="multiple" class="form-control">
+
+                            </div>
+
+                 
+
+                            <div class="col-md-2">
+                                <button type="submit" class="theme-btn">Upload</button>
+                                <a class="theme-btn" id="home_about_images_cancel">cancel <span class="la la-caret-right"></span></a>
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            @if ($images = Session::get('files'))
+
+                                @foreach($images as $value)
+
+                                <div class="col-md-2">
+
+                                    <img src="{{ asset('images/'.$value) }}" width="100">
+
+                                </div>
+
+                                @endforeach
+
+                            @endif
+
+                        </div>
+
+                    </form>
+
+                    {{-- <form action="{{route('update_text_images' , ['slug' => 'home_about'])}}" method="POST" class="dropzone" id="home_about_images_form my-awesome-dropzone" enctype="multipart/form-data">
+                        @csrf
+                            @method('PUT')
+                        <div class="row">
+
+                            <div class="col-lg-12">
+                            <div class="dropzone-previews"></div> <!-- this is were the previews should be shown. -->
+                            </div>
+                            <div class="col-lg-12">
+                                <button class="theme-btn" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    --}}
                 </div>
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->
@@ -314,4 +436,8 @@
 <!-- ================================
        START CLIENTLOGO AREA
 ================================= -->
+@push('js')
+<script src={{ asset('js/mine.js') }}></script>
+    
+@endpush
 @endsection

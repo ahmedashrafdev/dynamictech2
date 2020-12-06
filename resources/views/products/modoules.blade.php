@@ -4,7 +4,7 @@
 
 @section('pageName' , $parent->title)
 @section('breadcrumb')
-<li class="breadcrumb__list-active"><a href="{{route('products')}}">products</a></li>
+<li class="breadcrumb__list-active"><a href="{{route('products')}}">{{__('main.products')}}</a></li>
 @endsection
 @section('content')
 <!--======================================

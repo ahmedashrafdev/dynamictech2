@@ -14,7 +14,7 @@
                     <ul class="list-items">
                         <li>
                             <span class="la la-eye"></span>
-                            <h3>Our Vision</h3>
+                            <h3>{{__('main.vision')}}</h3>
                             <p>
                                 {{loadText('vision')->value}}
                             </p>
@@ -34,7 +34,7 @@
                             <a class="video-play-btn" href="https://www.youtube.com/watch?v=NWxMqiFq0Yo" data-fancybox="">
                                 <span class="la la-play"></span>
                             </a>
-                            <p>Watch Preview</p>
+                            <p>{{__('main.mission')}}</p>
                         </div>
                     </div>
                 </div><!-- end about-item -->
@@ -42,7 +42,7 @@
             <div class="col-lg-6">
                 <div class="about-item about-item-right">
                     <div class="section-heading about-right">
-                        <h5 class="section__meta">#about company</h5>
+                        <h5 class="section__meta">#{{__('main.about')}}</h5>
                         <h2 class="section__title">{{loadText('about_section')->value}}</h2>
                         <div class="section-divider"></div>
                     </div><!-- end section-heading -->
@@ -78,8 +78,8 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">documentation</h5>
-                    <h2 class="section__title">Frequently Asked Questions</h2>
+                    <h5 class="section__meta">{{__('main.documintation')}}</h5>
+                    <h2 class="section__title">{{__('main.faq')}}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
@@ -158,15 +158,15 @@
                 <div class="get-start-box">
                     <div class="col-lg-8">
                         <div class="section-heading">
-                            <h5 class="section__meta">#get in touch</h5>
-                            <h2 class="section__title">Do you have any inquiries?</h2>
-                            <p class="section__desc">Contact us without any hesitate.</p>
+                            <h5 class="section__meta">#{{__('main.get_in_touch')}}</h5>
+                            <h2 class="section__title">{{__('main.any_inquires')}}</h2>
+                            <p class="section__desc">{{__('main.contact_us_without_hesitate')}}</p>
                         </div><!-- end section-heading -->
                     </div><!-- end col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="button-shared text-right">
                             <a href="{{route('contact')}}" class="theme-btn">
-                                contact us <span class="la la-caret-right"></span>
+                                {{__('main.contact_us')}} <span class="la la-caret-right"></span>
                             </a>
                         </div><!-- end button-shared -->
                     </div><!-- end col-lg-4 -->

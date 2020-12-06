@@ -121,7 +121,12 @@ class TextSeeder extends Seeder
                     [
                         "key" => "phone",
                         "type" => "contacts",
-                        "value" => "+20026706524",
+                        "value" => "01005075005",
+                    ],
+                    [
+                        "key" => "sales_phone",
+                        "type" => "contacts",
+                        "value" => "01050504876",
                     ],
                     [
                         "key" => "email",

@@ -7,16 +7,11 @@ use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $user = [
             "name" => 'admin',
-            "email" => 'admin@dynamictechnology.com',
+            "email" => 'admin@dynamiceg.com',
             "password" => bcrypt(123456),
         ];
 

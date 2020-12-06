@@ -11,7 +11,7 @@
                 <h5 class="card-title">
                 <a href="{{route('post', ['slug' => $post->slug])}}" class="card__link">{{$post->title}}</a>
                 </h5>
-                <a href="{{route('post', ['slug' => $post->slug])}}" class="link-btn">Read More
+                <a href="{{route('post', ['slug' => $post->slug])}}" class="link-btn">{{__('main.more')}}
                     <span class="la la-long-arrow-right"></span>
                 </a>
             </div>

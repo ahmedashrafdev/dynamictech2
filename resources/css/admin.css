@@ -1,0 +1,39 @@
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    
+}
+.relative{
+    position: relative;
+}
+.edit-frame{
+    width:100%;
+    text-align: right;
+    margin-bottom: 20px;
+    
+}
+.edit-frame a{
+    cursor: pointer;
+    color: #fff !important;
+    background-color: var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 200;
+    position: relative;
+}
+.edit-frame a i{
+    color:#fff;
+    margin-left: 10px;
+}
+.admin-form , .editable{
+    position: relative;
+    z-index : 10;
+   
+}
+
+

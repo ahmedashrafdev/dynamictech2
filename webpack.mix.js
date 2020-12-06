@@ -50,3 +50,20 @@ mix.styles(
     ],
     "public/js/all.js"
 );
+mix.styles(
+    [
+       
+        "resources/css/admin.css",
+    ],
+    "public/css/admin.css"
+).scripts([
+  
+    'resources/js/mine.js',
+],'public/js/mine.js');
+mix.styles(
+    [
+       
+        "resources/css/rtl.css",
+    ],
+    "public/css/rtl.css"
+)

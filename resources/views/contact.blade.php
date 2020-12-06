@@ -8,8 +8,39 @@
 <!-- ================================
        START CONTACT AREA
 ================================= -->
-<section class="contact-area section--padding">
+<section class="contact-area">
     <div class="container">
+        <div class="row contact-address">
+            <div class="col-lg-12">
+                <div class="contact-heading">
+                    <h3 class="contact__heading">{{__('main.contacts')}}</h3>
+                </div>
+            </div><!-- end col-lg-12 -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="contact-card">
+                    <h5 class="contact__subheding">{{__('main.email')}}</h5>
+                    <p class="contact__text">
+                        <span><i class="la la-envelope-o"></i>{{loadText('email')->value}}</span>
+                    </p>
+                    <h5 class="contact__subheding">{{__('main.address')}}</h5>
+                    <p class="contact__text">
+                        <span><i class="la la-map-marker"></i>{{loadText('address')->value}}</span>
+                    </p>
+                    <h5 class="contact__subheding">{{__('main.phone')}}</h5>
+                    <p class="contact__text">
+                        <span><i class="la la-phone"></i> <a href="tel:{{loadText('phone')->value}}">{{loadText('phone')->value}}</a></span>
+                    </p>
+                    <h5 class="contact__subheding">{{__('main.sales')}}</h5>
+                    <p class="contact__text">
+                        <span><i class="la la-phone"></i> <a href="tel:{{loadText('phone')->value}}">{{loadText('phone')->value}}</a></span>
+                    </p>
+                </div>
+            </div><!-- end col-lg-4 col-sm-6 -->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <iframe src="{{loadText('location')->value}}" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                
+            </div><!-- end col-lg-4 col-sm-6 -->
+        </div><!-- end row -->
         <div class="row">
             <div class="col-lg-7">
                 <div class="section-heading">
@@ -64,52 +95,11 @@
                 </div>
             </div><!-- end col-lg-5 -->
         </div><!-- end row -->
-        <div class="row contact-address">
-            <div class="col-lg-12">
-                <div class="contact-heading">
-                    <h3 class="contact__heading">Contacts</h3>
-                </div>
-            </div><!-- end col-lg-12 -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="contact-card">
-                    <h5 class="contact__subheding">E-mail</h5>
-                    <p class="contact__text">
-                        <span><i class="la la-envelope-o"></i> <a href="mailto:{{loadText('email')->value}}">{{loadText('email')->value}}</a></span>
-                    </p>
-                </div>
-            </div><!-- end col-lg-4 col-sm-6 -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="contact-card">
-                    <h5 class="contact__subheding">Phone</h5>
-                    <p class="contact__text">
-                        <span><i class="la la-phone"></i> <a href="tel:+{{loadText('phone')->value}}">+{{loadText('phone')->value}}</a></span>
-                    </p>
-                </div>
-            </div><!-- end col-lg-4 col-sm-6 -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="contact-card">
-                    <h5 class="contact__subheding">Address</h5>
-                    <p class="contact__text" style="font-size:14px">
-                        <span><i class="la la-map-marker"></i> {{loadText('address')->value}}</span>
-                    </p>
-                </div>
-            </div><!-- end col-lg-4 col-sm-6 -->
-        </div><!-- end row -->
+       
     </div><!-- end container -->
 </section>
 <!-- ================================
        END CONTACT AREA
 ================================= -->
 
-<!-- ================================
-       START GOOGLE MAP
-================================= -->
-<div class="google-map google-map2">
-    <div class="map-wrap">
-    <iframe src="{{loadText('location')->value}}" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-</div><!-- end google-map -->
-<!-- ================================
-       END GOOGLE MAP
-================================= -->
 @endsection

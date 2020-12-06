@@ -13,11 +13,11 @@
                     <div class="breadcrumb__titles">
                         <h2 class="breadcrumb__title">@yield('pageName')</h2>
                     </div>
-                    <ul class="breadcrumb__list">
-                        <li class="breadcrumb__list-active"><a href="{{route('home')}}">Home</a></li>
+                    {{-- <ul class="breadcrumb__list">
+                        <li class="breadcrumb__list-active"><a href="{{route('home')}}">{{__('main.home')}}</a></li>
                         @yield('breadcrumb')
                         <li>@yield('pageName')</li>
-                    </ul>
+                    </ul> --}}
                 </div><!-- breadcrumb-content -->
             </div><!-- col-lg-12 -->
         </div><!-- row -->

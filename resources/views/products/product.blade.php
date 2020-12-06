@@ -4,7 +4,7 @@
 
 @section('pageName' , $product->title)
 @section('breadcrumb')
-<li class="breadcrumb__list-active"><a href="{{route('products')}}">products</a></li>
+<li class="breadcrumb__list-active"><a href="{{route('products')}}">{{__('main.products')}}</a></li>
 @endsection
 @section('content')
 <!--======================================
@@ -23,12 +23,12 @@
                     <ul class="list-items">
                        {!! $product->content !!}
                     </ul>
-                    <a href="{{route('demo')}}" class="theme-btn">Request demo <span class="la la-caret-right"></span></a>
+                    <a href="{{route('demo')}}" class="theme-btn">{{__('main.demo')}}<span class="la la-caret-right"></span></a>
                 </div>
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">
                 <div class="faq-img">
-                    <img src="{{loadImage($product->screenshot)}}" alt="">
+                <img src="{{loadImage($product->screenshot)}}" alt="{{$seo}}">
                 </div><!-- end faq-img -->
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->

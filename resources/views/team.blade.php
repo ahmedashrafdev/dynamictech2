@@ -11,8 +11,8 @@
             <div class="col-lg-12">
                 <div class="section-heading">
                     <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">expert people</h5>
-                    <h2 class="section__title">Meet Our Team</h2>
+                    <h5 class="section__meta">{{__('main.expert_people')}}</h5>
+                    <h2 class="section__title">{{__('main.our_team')}}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->

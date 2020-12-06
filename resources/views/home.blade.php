@@ -10,7 +10,7 @@
 <section class="banner-area home-page-2">
     <div class="homepage-slide1 banner-item-wrap">
         @foreach($sliders as $index => $slider)
-        <div class="single-slide-item single-slide-item{{$index + 1}}">
+        <div class="single-slide-item" style="background-image : url({{loadImage($slider->image)}})">
             <span class="banner-number">0{{$index+1}}</span>
             <div class="slide-item-table">
                 <div class="slide-item-tablecell">
@@ -29,8 +29,8 @@
                                         </p>
                                     </div><!-- section-description -->
                                     <div class="btn-box">
-                                        <a href="{{route('demo')}}" class="theme-btn">let's start now <span class="la la-caret-right"></span></a>
-                                        <a href="{{route('about')}}" class="theme-btn">learn more <span class="la la-caret-right"></span></a>
+                                        <a href="{{route('demo')}}" class="theme-btn">{{__('main.start_now')}} <span class="la la-caret-right"></span></a>
+                                        <a href="{{route('about')}}" class="theme-btn">{{__('main.more')}} <span class="la la-caret-right"></span></a>
                                     </div><!-- btn-box -->
                                 </div><!-- banner-content -->
                             </div><!-- col-lg-12 -->
@@ -59,7 +59,7 @@
                 <div class="about-item">
                     <div class="about-heading section-heading about-right">
                         <div class="section-dot"></div>
-                        <h5 class="section__meta rounded-radius">about us</h5>
+                        <h5 class="section__meta rounded-radius">{{__('main.about_us')}}</h5>
                     <h2 class="section__title">{{loadText('about_section_title')->value}}</h2>
                     </div><!-- end section-heading -->
                     <div class="section-description">
@@ -68,7 +68,7 @@
                         </p>
                     </div>
                   
-                    <a title="{{$seo}}" href="{{route('about')}}" class="theme-btn">know more <span class="la la-caret-right"></span></a>
+                    <a title="{{$seo}}" href="{{route('about')}}" class="theme-btn">{{__('main.more')}} <span class="la la-caret-right"></span></a>
                 </div>
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">
@@ -102,7 +102,7 @@
             <div class="col-lg-12">
                 <div class="section-heading pb-3">
                     <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">funfacts</h5>
+                    <h5 class="section__meta">{{__('main.funfacts')}}</h5>
                     <h2 class="section__title">{{loadText('facts')->value}}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
@@ -145,7 +145,7 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <div class="section-icon mx-auto"></div><!-- end section-divider -->
-                    <p class="section__meta">our products</p>
+                    <p class="section__meta">{{__('main.our_products')}}</p>
                     <h2 class="section__title">{!! loadText('our_proucts')->value !!}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
@@ -207,7 +207,7 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">why choose us</h5>
+                    <h5 class="section__meta">{{__('main.why_choose_us')}}</h5>
                     <h2 class="section__title">{{loadText('why_choose_us')->value}}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
@@ -221,7 +221,7 @@
                         <ul class="list-items">
                             <li>
                                 
-                                <span class="{{'la la-'.$item->icon}}"></span>
+                                <span class="{{'icon la la-'.$item->icon}}"></span>
                                 <h3>{{$item->key}}</h3>
                                 
                                 <p>
@@ -239,7 +239,7 @@
                         <a class="video-play-btn" href="{{loadText('why_choose_us_video')->value}}" data-fancybox>
                             <i class="la la-play"></i>
                         </a>
-                        <p> Watch Video</p>
+                        <p>{{__('main.watch_video')}}</p>
                     </div>
                 </div>
             </div><!-- end col-lg-5 -->
@@ -262,7 +262,7 @@
             <div class="col-lg-12">
                 <div class="section-heading text-center">
                     <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">blog posts</h5>
+                    <h5 class="section__meta">{{__('main.blog_posts')}}</h5>
                     <h2 class="section__title">{!!loadText('our_blog')->value!!}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
@@ -276,7 +276,7 @@
 
         <div class="row car-wap flex justify-center w-full">
             <div class="col-lg-12 text-center">
-                <a href="{{route('blog')}}" class="theme-btn">Show all <span class="la la-caret-right"></span></a>
+                <a href="{{route('blog')}}" class="theme-btn">{{__('main.show_all')}}<span class="la la-caret-right"></span></a>
 
             </div>
         </div>
