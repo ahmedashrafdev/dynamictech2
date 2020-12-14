@@ -23,7 +23,8 @@ class PagesController extends Controller
         $whyChooseUs = loadText('' , 'why_choose_us');
         $clients =Clients::where('featured' , 1)->get();
         $posts = Post::where('featured' , 1)->get();
-        return view('home' , compact('sliders' , 'posts' , 'stats' , 'whyChooseUs' , 'clients'));
+        $modoules = Product::findBySlug('NEXT-ERP')->children;
+        return view('home' , compact('sliders' , 'modoules' , 'posts' , 'stats' , 'whyChooseUs' , 'clients'));
     }
 
     public function aboutPage()

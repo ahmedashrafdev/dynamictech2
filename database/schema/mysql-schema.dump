@@ -7,9 +7,12 @@ CREATE TABLE `migrations` (
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `tag` varchar(255),
+  `tag_ar` varchar(255),
   `heading` varchar(255) NOT NULL,
+  `heading_ar` varchar(255) NOT NULL,
   `content` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `content_ar` varchar(255) NOT NULL,
+  `image` varchar(255) ,
   `seo` varchar(255),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -18,6 +21,7 @@ CREATE TABLE `sliders` (
 CREATE TABLE `stats` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `record` varchar(255) NOT NULL,
+  `record_ar` varchar(255) NOT NULL,
   `icon` varchar(255) NOT NULL,
   `value` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -26,8 +30,10 @@ CREATE TABLE `stats` (
 CREATE TABLE `services` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `title` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
   `icon` varchar(255) NOT NULL,
   `breif` varchar(255) NOT NULL,
+  `breif_ar` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 );
@@ -36,6 +42,7 @@ CREATE TABLE `texts` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `key` varchar(255) UNIQUE NOT NULL,
   `value` text,
+  `value_ar` text,
   `image` varchar(255),
   `icon` varchar(255),
   `images` text,
@@ -48,8 +55,9 @@ CREATE TABLE `texts` (
 CREATE TABLE `team` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `name` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `image` varchar(255),
   `title` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
   `fb` varchar(255),
   `twitter` varchar(255),
   `seo` varchar(255),
@@ -63,6 +71,7 @@ CREATE TABLE `testemonials` (
   `image` varchar(255),
   `content` text NOT NULL,
   `title` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
   `fb` varchar(255),
   `twitter` varchar(255),
   `seo` varchar(255),
@@ -73,7 +82,9 @@ CREATE TABLE `testemonials` (
 CREATE TABLE `features` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `title` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
   `content` text NOT NULL,
+  `content_ar` text NOT NULL,
   `icon` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -82,12 +93,15 @@ CREATE TABLE `features` (
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `title` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL UNIQUE,
   `content` text,
+  `content_ar` text,
   `icon` varchar(255),
   `image` varchar(255),
   `screenshot` varchar(255),
   `breif` text,
+  `breif_ar` text,
   `seo` varchar(255),
   `parent_id` bigint(20) UNSIGNED,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -98,9 +112,11 @@ CREATE TABLE `products` (
 CREATE TABLE `pages` (
   `id` bigint(20) UNSIGNED NOT NULL PRIMARY KEY,
   `title` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `title_ar` varchar(255) NOT NULL,
+  `image` varchar(255),
   `keywords` varchar(255),
   `description` varchar(255),
+  `description_ar` varchar(255),
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 );
@@ -111,7 +127,7 @@ CREATE TABLE `posts` (
   `slug` varchar(255) NOT NULL UNIQUE,
   `content` text NOT NULL,
   `seo` varchar(255),
-  `image` varchar(255) NOT NULL,
+  `image` varchar(255),
   `breif` text NOT NULL,
   `featured` tinyint DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -175,5 +191,3 @@ ALTER TABLE `posts`
 
 ALTER TABLE `clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
-

@@ -19,7 +19,6 @@
                             <div class="col-lg-12">
                                 <div class="banner-content">
                                     <div class="section-heading">
-                                        <p class="section__meta">{{$slider->tag}}</p>
                                         <h2 class="section__title">{!!$slider->heading!!}</h2>
 
                                     </div><!-- section-heading -->
@@ -29,7 +28,6 @@
                                         </p>
                                     </div><!-- section-description -->
                                     <div class="btn-box">
-                                        <a href="{{route('demo')}}" class="theme-btn">{{__('main.start_now')}} <span class="la la-caret-right"></span></a>
                                         <a href="{{route('about')}}" class="theme-btn">{{__('main.more')}} <span class="la la-caret-right"></span></a>
                                     </div><!-- btn-box -->
                                 </div><!-- banner-content -->
@@ -47,12 +45,57 @@
 <!--================================
         END SLIDER AREA
 =================================-->
+<div class="section-block"></div>
 
+
+<!--======================================
+        START WHY CHOOSE US AREA
+ ======================================-->
+ <section class="about-area about-area2 section-padding why-choose-area2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h2 class="section__title">{{loadText('why_choose_us')->value}}</h2>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row why-choose-wrap">
+            <div class="col-lg-7">
+                @foreach ($whyChooseUs as $index => $item)
+                    
+                    <div class="about-item">
+                        <span class="choose-number">0{{$index+1}}</span>
+                        <ul class="list-items">
+                            <li>
+                                
+                                <span class="{{'icon la la-'.$item->icon}}"></span>
+                                <h3>{{$item->key}}</h3>
+                                
+                                <p>
+                                    {{$item->value}}
+                                </p>
+                            </li>
+                        </ul>
+                    </div><!-- end about-item -->
+                @endforeach
+            </div><!-- end col-lg-8 -->
+            <div class="col-lg-5">
+                <div class="video-image-gallery">
+                <img src="{{loadText('why_choose_us_image')->image}}" alt="{{$seo}}">
+                </div>
+            </div><!-- end col-lg-5 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end about-area -->
+<!--======================================
+        END why coose us AREA
+======================================-->
 
 <!--======================================
         START ABOUT AREA
  ======================================-->
- <section class="about-area about-area3 section--padding">
+ {{-- <section class="about-area about-area3 section--padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -85,51 +128,12 @@
             </div><!-- end col-lg-6 -->
         </div><!-- end row -->
     </div><!-- end container -->
-</section><!-- end about-area -->
+</section><!-- end about-area --> --}}
 <!--======================================
         END ABOUT AREA
 ======================================-->
 
-<div class="section-block"></div>
 
-
-<!--======================================
-        START COUNTER AREA
-======================================-->
-<section class="funfact-area4 section--padding text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading pb-3">
-                    <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">{{__('main.funfacts')}}</h5>
-                    <h2 class="section__title">{{loadText('facts')->value}}</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row counter-wrap mt-5">
-            @foreach ($stats as $stat)
-            
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="counter-item counter-item-4">
-                        <div class="counter-content">
-                            {{-- {{dd($stat->icon)}} --}}
-                            <span class="{{'counter__icon mx-auto la la-'.$stat->icon}}"></span>
-                            <span class="counter counter__numb">{{$stat->value}}</span>
-                            <h3 class="counter__title">{{$stat->record}}</h3>
-                        </div>
-                    </div><!-- end counter-item counter-item-4 -->
-                </div><!-- end col-lg-3 col-sm-6 -->
-                
-            @endforeach
-            
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end counter-area -->
-<!--======================================
-        END COUNTER AREA
-======================================-->
 
 
 <div class="section-block"></div>
@@ -144,14 +148,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading text-center">
-                    <div class="section-icon mx-auto"></div><!-- end section-divider -->
-                    <p class="section__meta">{{__('main.our_products')}}</p>
                     <h2 class="section__title">{!! loadText('our_proucts')->value !!}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
         <div class="row service-wrap">
-            <div class="col-lg-4">
+            <div class="col-lg-12">
                 <div class="service-nav">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         @foreach ($products as $index =>  $product)
@@ -166,23 +168,43 @@
                     </ul>
                 </div><!-- end service-nav -->
             </div><!-- end col-lg-4 -->
-            <div class="col-lg-7 mr-auto">
+            <div class="col-lg-12 mr-auto">
                 <div class="service-content-wrap">
                     <div class="tab-content" id="myTabContent">
                         @foreach ($products as $index => $product)
                             <div class="tab-pane fade  {{$index === 0 ? 'active show' : ''}}" id="{{$product->slug}}" role="tabpanel" aria-labelledby="{{$product->slug}}">
                                 <div class="service-content">
-                                    <img class="service__img" src="{{loadImage($product->image)}}" alt="{{$product->seo}}">
+                                    {{-- <img class="service__img" src="{{loadImage($product->image)}}" alt="{{$product->seo}}"> --}}
                                     <h3 class="service__title">{{$product->title}}</h3>
                                     <p class="service__text">
                                         {{$product->breif}}
                                     </p>
-                                    <a title="{{$product->seo}}" href="{{route('product' , ['slug' => $product->slug])}}" class="service__btn">learn more
+                                    <div class="row feature-content-wrap">
+                                        @foreach ($modoules as $modoule)
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a href="{{route('product' , ['slug' => $modoule->slug])}}">
+                                            <div class="feature-item feature-item-2 feature-box-color">
+                                                <div class="hover-overlay"></div>
+                                                <div class="feature__icon">
+                                                    @if ($modoule->icon === 'salesforce')
+                                                    <i class="lab la-{{$modoule->icon}}"></i>
+                                                    @else
+                                                    <i class="la la-{{$modoule->icon}}"></i>
+                                                    @endif
+                                                </div>
+                                                <h3 class="feature__title"><a href="{{route('product' , ['slug' => $modoule->slug])}}">{{$modoule->title}}</a></h3>
+                                            </div><!-- end feature-item -->
+                                        </a>
+                                        </div><!-- end col-lg-3 -->
+                                        
+                                            
+                                        @endforeach
+                                    </div><!-- end row -->
+                                    {{-- <a title="{{$product->seo}}" href="{{route('product' , ['slug' => $product->slug])}}" class="service__btn">learn more
                                         <span class="la la-caret-right"></span>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
-                            
                         @endforeach
                       
                     </div>
@@ -195,96 +217,8 @@
         END SERVICE AREA
 ======================================-->
 
-<div class="section-block"></div>
 
 
-<!--======================================
-        START WHY CHOOSE US AREA
- ======================================-->
- <section class="about-area about-area2 section-padding why-choose-area2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">{{__('main.why_choose_us')}}</h5>
-                    <h2 class="section__title">{{loadText('why_choose_us')->value}}</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row why-choose-wrap">
-            <div class="col-lg-7">
-                @foreach ($whyChooseUs as $index => $item)
-                    
-                    <div class="about-item">
-                        <span class="choose-number">0{{$index+1}}</span>
-                        <ul class="list-items">
-                            <li>
-                                
-                                <span class="{{'icon la la-'.$item->icon}}"></span>
-                                <h3>{{$item->key}}</h3>
-                                
-                                <p>
-                                    {{$item->value}}
-                                </p>
-                            </li>
-                        </ul>
-                    </div><!-- end about-item -->
-                @endforeach
-            </div><!-- end col-lg-8 -->
-            <div class="col-lg-5">
-                <div class="video-image-gallery">
-                <img src="{{loadText('why_choose_us_image')->image}}" alt="{{$seo}}">
-                    <div class="preview-video">
-                        <a class="video-play-btn" href="{{loadText('why_choose_us_video')->value}}" data-fancybox>
-                            <i class="la la-play"></i>
-                        </a>
-                        <p>{{__('main.watch_video')}}</p>
-                    </div>
-                </div>
-            </div><!-- end col-lg-5 -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</section><!-- end about-area -->
-<!--======================================
-        END why coose us AREA
-======================================-->
-
-
-
-
-<!--======================================
-        START CARD AREA
-======================================-->
-<section class="card-area blog-area-2 section--padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-heading text-center">
-                    <div class="section-icon mx-auto"></div>
-                    <h5 class="section__meta">{{__('main.blog_posts')}}</h5>
-                    <h2 class="section__title">{!!loadText('our_blog')->value!!}</h2>
-                </div><!-- end section-heading -->
-            </div><!-- end col-lg-12 -->
-        </div><!-- end row -->
-        <div class="row card-wrap">
-            @foreach ($posts as $post)
-               @include('partials.post' , ['post' => $post])
-            @endforeach
-          
-        </div><!-- end row -->
-
-        <div class="row car-wap flex justify-center w-full">
-            <div class="col-lg-12 text-center">
-                <a href="{{route('blog')}}" class="theme-btn">{{__('main.show_all')}}<span class="la la-caret-right"></span></a>
-
-            </div>
-        </div>
-    </div><!-- end container -->
-</section>
-<!--======================================
-        END CARD AREA
-======================================-->
 
 <div class="section-block"></div>
 
@@ -314,4 +248,75 @@
 <!-- ================================
        START CLIENTLOGO AREA
 ================================= -->
+
+<div class="section-block"></div>
+
+
+
+<!--======================================
+        START COUNTER AREA
+======================================-->
+<section class="funfact-area4 section--padding text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading pb-3">
+                    <h2 class="section__title">{{loadText('facts')->value}}</h2>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row counter-wrap mt-5">
+            @foreach ($stats as $stat)
+            
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="counter-item counter-item-4">
+                        <div class="counter-content">
+                            {{-- {{dd($stat->icon)}} --}}
+                            <span class="{{'counter__icon mx-auto la la-'.$stat->icon}}"></span>
+                            <span class="counter counter__numb">{{$stat->value}}</span>
+                            <h3 class="counter__title">{{$stat->record}}</h3>
+                        </div>
+                    </div><!-- end counter-item counter-item-4 -->
+                </div><!-- end col-lg-3 col-sm-6 -->
+                
+            @endforeach
+            
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end counter-area -->
+<!--======================================
+        END COUNTER AREA
+======================================-->
+<!--======================================
+        START CARD AREA
+======================================-->
+<section class="card-area blog-area-2 section--padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h2 class="section__title">{!!loadText('our_blog')->value!!}</h2>
+                </div><!-- end section-heading -->
+            </div><!-- end col-lg-12 -->
+        </div><!-- end row -->
+        <div class="row card-wrap">
+            @foreach ($posts as $post)
+               @include('partials.post' , ['post' => $post])
+            @endforeach
+          
+        </div><!-- end row -->
+
+        <div class="row car-wap flex justify-center w-full">
+            <div class="col-lg-12 text-center">
+                <a href="{{route('blog')}}" class="theme-btn">{{__('main.show_all')}}<span class="la la-caret-right"></span></a>
+
+            </div>
+        </div>
+    </div><!-- end container -->
+</section>
+<!--======================================
+        END CARD AREA
+======================================-->
+
 @endsection

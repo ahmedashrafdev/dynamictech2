@@ -1,5 +1,5 @@
 :root{
-    --primary : #3a0098;
+    --primary : #0e4194;
     --secondary : #f08100;
   }
   
@@ -13651,7 +13651,8 @@
     font-size: 35px; }
   
   .feature-item-2 .feature__title {
-    font-size: 20px; }
+    font-size: 20px; 
+    text-align:center}
   
   .feature-item-2 .feature__text {
     margin-bottom: 0; }
@@ -13701,9 +13702,12 @@
   .service-wrap {
     margin-top: 60px; }
     .service-wrap .service-nav .nav-tabs {
-      border-bottom: none; }
+      border-bottom: none;
+      display: flex;
+      justify-content: center;
+    }
       .service-wrap .service-nav .nav-tabs li {
-        width: 100%;
+        /* width: 100%; */
         margin-bottom: 5px; }
         .service-wrap .service-nav .nav-tabs li a {
           border: none;
@@ -16162,7 +16166,7 @@
         -o-transition: all 0.3s;
         transition: all 0.3s; }
         .clientlogo-area .client-logo .owl-item .client-logo-item img {
-          opacity: 0.4;
+          opacity: 1;
           -webkit-transition: all 0.3s;
           -moz-transition: all 0.3s;
           -ms-transition: all 0.3s;
@@ -16438,6 +16442,7 @@
     margin-bottom: 30px; }
     .contact-card .contact__subheding {
       margin-bottom: 25px;
+      text-transform: capitalize;
       font-weight: 600; }
     .contact-card .contact__text span {
       display: block;
@@ -16925,7 +16930,8 @@
     margin-bottom: 20px; }
   
   .error-content .contact-form-action form .form-group .form-control {
-    padding-left: 20px; }
+    padding-left: 20px;
+  text-transform: capitalize; }
   
   .error-content .contact-form-action form .form-group .search-btn {
     background-color: var(--primary);
@@ -17299,7 +17305,7 @@
   ===============================-*/
   .breadcrumb-area {
     position: relative;
-    padding-top: 180px;
+    padding-top: 120px;
     padding-bottom: 20px; }
     @media (max-width: 991px) {
       .breadcrumb-area {
@@ -17374,6 +17380,7 @@
           text-align: center; } }
       .breadcrumb-area .breadcrumb-content .breadcrumb__titles .breadcrumb__title {
         color: #fff;
+        text-transform: capitalize;
         font-size: 20px;
         line-height: 70px;
         font-weight: 700; }
@@ -17422,3 +17429,4 @@
   .hidden{
     display:none;
   }
+  

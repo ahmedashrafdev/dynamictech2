@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class Product extends Model
 {
@@ -28,6 +29,19 @@ class Product extends Model
         return $this->hasMany(Product::class,'parent_id','id');
     }
 
+    // public function getTitleAttribute()
+    // {
+    //    return session('locale') == 'ar' ? $this->title : $this->title;
+    // }
+
+    // public function getContentAttribute($value)
+    // {
+    //    return session('locale') == 'ar' ? $this->content : $value;
+    // }
+    // public function getBreifAttribute($value)
+    // {
+    //     return session('locale') == 'ar' ? $this->breif : $value;
+    // }
 
     public static function findBySlug($slug, array $columns = ['*'])
     {

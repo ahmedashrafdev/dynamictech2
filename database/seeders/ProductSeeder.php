@@ -17,16 +17,27 @@ class ProductSeeder extends Seeder
         $products = [
             [
                 "title" => "NEXT ERP: Enterprise Resource Planning – ERP",
+                "title_ar" => "NEXT ERP: Enterprise Resource Planning – ERP",
                 "slug" => "NEXT-ERP-Enterprise-Resource-Planning-ERP",
                 "icon" => "network-wired",
                 "image" => "https://media.istockphoto.com/vectors/enterprise-resource-planning-concept-skyscraper-building-pencil-shape-vector-id1283808998?b=1&k=6&m=1283808998&s=612x612&w=0&h=4WQX6841jSDAdLXXVZDVIw6GvplNBJy3JGXYSW0xxx8=",
                 "breif" => "Dynamic BPR (Business Process Reengineering) will lead to more flexible and organized management policies using our consulting and strategic thinking mindset, also we take into consideration the needs of top management for accurate and timely information to support their decision making process.",
+                "breif_ar" => "Dynamic BPR (Business Process Reengineering) will lead to more flexible and organized management policies using our consulting and strategic thinking mindset, also we take into consideration the needs of top management for accurate and timely information to support their decision making process.",
                 "seo" => "the ebst erp system in egypt",
             ],
             [
                 "title"  =>  "NEXT HRMS: Human Resources Management ",
+                "title_ar"  =>  "NEXT HRMS: Human Resources Management ",
                 "slug" => "NEXT-HRMS-Human-Resources-Management",
                 "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Personnel Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Recruitment Planning and Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Training Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Employee Benefits </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Payroll and Salaries </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Time & Attendance </li>
+                    ',
+                    "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>Personnel Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Recruitment Planning and Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Training Management </li>
@@ -37,10 +48,12 @@ class ProductSeeder extends Seeder
                 "icon" =>  "users-cog",
                 "image" =>  "products/hr.png",
                 "breif" =>  "Dynamic Technology offers its clients complete end-to-end human capital information technology solutions and services including payroll and personnel management, HR dashboards, data and analysis, time and attendance, and many other services",
+                "breif_ar" =>  "Dynamic Technology offers its clients complete end-to-end human capital information technology solutions and services including payroll and personnel management, HR dashboards, data and analysis, time and attendance, and many other services",
                 "seo" =>  "NEXT HRMS: Human Resources Management",
             ],
             [
                 "title"  =>  "Website and Mobile Applications Development ",
+                "title_ar"  =>  "Website and Mobile Applications Development ",
                 "slug" => "website-and-mobile-applications-development",
                 "content" => '
                     <li class="product-li"><span class="icon la la-check"></span>Website Design  </li>
@@ -51,12 +64,20 @@ class ProductSeeder extends Seeder
                 "icon" =>  "mobile",
                 "image" =>  "http://codinghelptech.com/blog_post/Best-YouTube-Channels-To-Learn-Web-Development.jpg",
                 "breif" =>  "Dynamic technology offers you Web Application Development Services to help you build anything from basic informational websites to complex web applications",
+                "breif_ar" =>  "Dynamic technology offers you Web Application Development Services to help you build anything from basic informational websites to complex web applications",
                 "seo" =>  "Website and Mobile Applications Development",
             ],
             [
                 "title"  =>  "Professional Services ",
+                "title_ar"  =>  "Professional Services ",
                 "slug" => "professional-services",
                 "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Business Process Engineering</li>
+                    <li class="product-li"><span class="icon la la-check"></span>Business Process Reengineering</li>
+                    <li class="product-li"><span class="icon la la-check"></span>Industry Wise Business Analysis</li>
+                    <li class="product-li"><span class="icon la la-check"></span>Specialized Enterprise Business Processes Training</li>
+                ',
+                "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>Business Process Engineering</li>
                     <li class="product-li"><span class="icon la la-check"></span>Business Process Reengineering</li>
                     <li class="product-li"><span class="icon la la-check"></span>Industry Wise Business Analysis</li>
@@ -65,6 +86,7 @@ class ProductSeeder extends Seeder
                 "icon" =>  "project-diagram",
                 "image" =>  "products/01.jpeg",
                 "breif" =>  "Dynamic Professional services include ERP diagnostics studies and the professional preparation for RFP to give your organization a very powerful position in the process of selecting an enterprise system and perform a successful implementation using a very clear and powerful methodologies. ",
+                "breif_ar" =>  "Dynamic Professional services include ERP diagnostics studies and the professional preparation for RFP to give your organization a very powerful position in the process of selecting an enterprise system and perform a successful implementation using a very clear and powerful methodologies. ",
                 "seo" =>  " ERP diagnostics studies",
             ],
         ];
@@ -72,6 +94,7 @@ class ProductSeeder extends Seeder
         $children = [
             [
                 "title" => "Complete Financial Solutions",
+                "title_ar" => "Complete Financial Solutions",
                 "screenshot" => "products/screens/cfs.png",
                 "content" => '
                     <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
@@ -82,6 +105,16 @@ class ProductSeeder extends Seeder
                     <li class="product-li"><span class="icon la la-check"></span>Financial Budgeting </li>
                     <li class="product-li"><span class="icon la la-check"></span>Financial Reports and Analysis </li>
                 ',
+                "content_ar" => '
+                    <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Accounts Receivable </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Accounts Payable </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Cash & Banks </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Fixed Assets </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Financial Budgeting </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Financial Reports and Analysis </li>
+                ',
+                
                 "slug" => "complete-financial-solutions",
                 "icon" => "wallet",
                 "seo" => "Complete Financial Solutions",
@@ -90,8 +123,14 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Supply Chain Management ",
+                "title_ar" => "Supply Chain Management ",
                 "screenshot" => "products/screens/scm.png",
                 "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Stock Control </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Warehouse Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Distribution Management </li>
+                ',
+                "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>Stock Control </li>
                     <li class="product-li"><span class="icon la la-check"></span>Warehouse Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Distribution Management </li>
@@ -103,8 +142,17 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Product Information Management",
+                "title_ar" => "Product Information Management",
                 "screenshot" => "products/screens/pim.png",
                 "content" => '
+                 <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Product Information </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Product Features </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Product Accounting </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Product Variations </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Product Engineering </li>
+                    ',
+                    "content_ar" => '
                  <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
                     <li class="product-li"><span class="icon la la-check"></span>Product Information </li>
                     <li class="product-li"><span class="icon la la-check"></span>Product Features </li>
@@ -119,6 +167,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Procurement Management",
+                "title_ar" => "Procurement Management",
                 "screenshot" => "products/screens/prm.png",
                 "content" => '
                  <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
@@ -127,6 +176,13 @@ class ProductSeeder extends Seeder
                     <li class="product-li"><span class="icon la la-check"></span>Cash Supply routes </li>
                     <li class="product-li"><span class="icon la la-check"></span>Shipments and Receiving management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Warranty Management </i>',
+                    "content_ar" => '
+                    <li class="product-li"><span class="icon la la-check"></span>General Ledger </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Supplier Relationship Management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Purchase Management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Cash Supply routes </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Shipments and Receiving management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Warranty Management </i>',
                 "slug"  => "procurement-management",
                 "icon"  => "cc-visa",
                 "seo"   => "",
@@ -135,8 +191,16 @@ class ProductSeeder extends Seeder
 
             [
                 "title" => "Sales Management ",
+                "title_ar" => "Sales Management ",
                 "screenshot" => "products/screens/sm.png",
                 "content" => '
+                   <li class="product-li"><span class="icon la la-check"></span>Sales Order Management</li>
+                   <li class="product-li"><span class="icon la la-check"></span>Point Of Sales</li>
+                   <li class="product-li"><span class="icon la la-check"></span>Customer Information Management</li>
+                   <li class="product-li"><span class="icon la la-check"></span>Warranty Management</li>
+                   <li class="product-li"><span class="icon la la-check"></span>Distribution Centers </li>
+                   <li class="product-li"><span class="icon la la-check"></span>Sales Forecast</i>',
+                   "content_ar" => '
                    <li class="product-li"><span class="icon la la-check"></span>Sales Order Management</li>
                    <li class="product-li"><span class="icon la la-check"></span>Point Of Sales</li>
                    <li class="product-li"><span class="icon la la-check"></span>Customer Information Management</li>
@@ -151,8 +215,15 @@ class ProductSeeder extends Seeder
 
             [
                 "title" => "Project Management",
+                "title_ar" => "Project Management",
                 "screenshot" => "products/screens/pm.png",
                  "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Project Life Cycle </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Resources Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Contracting Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Project Costing management </li>
+                    ',
+                    "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>Project Life Cycle </li>
                     <li class="product-li"><span class="icon la la-check"></span>Resources Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Contracting Management </li>
@@ -167,13 +238,19 @@ class ProductSeeder extends Seeder
 
             [
                 "title" => "Customer Relationship Management ",
+                "title_ar" => "Customer Relationship Management ",
                 "screenshot" => "products/screens/crm.png",
                  "content" => '
                  <li class="product-li"><span class="icon la la-check"></span>Leads Management  </li>
                     <li class="product-li"><span class="icon la la-check"></span>Opportunity Management  </li>
                     <li class="product-li"><span class="icon la la-check"></span>Customer Orders History  </li>
                     <li class="product-li"><span class="icon la la-check"></span>Sales Analytics  </i>',
-                
+                "content_ar" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Leads Management  </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Opportunity Management  </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Customer Orders History  </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Sales Analytics  </i>',
+                   
                 "slug"  => "customer-relationship-management",
                 "icon"  => "person-booth",
                 "seo"   => "crm",
@@ -181,8 +258,14 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Salesforce Management ",
+                "title_ar" => "Salesforce Management ",
                 "screenshot" => "products/screens/sfm.png",
                  "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Sales Teams  </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Salesmen Information and Skill Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Commissions Management </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Sales Teams Evaluation </i>',
+                    "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>Sales Teams  </li>
                     <li class="product-li"><span class="icon la la-check"></span>Salesmen Information and Skill Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Commissions Management </li>
@@ -194,6 +277,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Manufacturing Management",
+                "title_ar" => "Manufacturing Management",
                 "screenshot" => "products/screens/prd.png",
                  "content" => '
                  <li class="product-li"><span class="icon la la-check"></span>Manufacturing Order Management </li>
@@ -204,6 +288,15 @@ class ProductSeeder extends Seeder
                     <li class="product-li"><span class="icon la la-check"></span>Manufacturing Orders / Job Costing Management </li>
                     <li class="product-li"><span class="icon la la-check"></span>Manufactured Products Margin Analysis </li>
                     ',
+                    "content_ar" => '
+                    <li class="product-li"><span class="icon la la-check"></span>Manufacturing Order Management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Bill Of Materials </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Operations Management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Material Requirements Planning </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Production Planning </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Manufacturing Orders / Job Costing Management </li>
+                       <li class="product-li"><span class="icon la la-check"></span>Manufactured Products Margin Analysis </li>
+                       ',
                 
                 "slug"  => "manufacuring-management",
                 "icon"  => "industry",
@@ -212,8 +305,13 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "E-collaboration",
+                "title_ar" => "E-collaboration",
                 "screenshot" => "products/screens/ec.png",
                  "content" => '
+                    <li class="product-li"><span class="icon la la-check"></span>OpenChatter </li>
+                    <li class="product-li"><span class="icon la la-check"></span>Instant Messages by email and SMS </li>
+                    ',
+                    "content_ar" => '
                     <li class="product-li"><span class="icon la la-check"></span>OpenChatter </li>
                     <li class="product-li"><span class="icon la la-check"></span>Instant Messages by email and SMS </li>
                     ',
@@ -225,6 +323,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Reports and Analytics ",
+                "title_ar" => "Reports and Analytics ",
                 "screenshot" => "products/screens/ra.png",
                  "content" => '
                     <li class="product-li"><span class="icon la la-check"></span>Role-based Dashboards</li>
@@ -232,7 +331,13 @@ class ProductSeeder extends Seeder
                     <li class="product-li"><span class="icon la la-check"></span>Financial Analytics </li>
                     <li class="product-li"><span class="icon la la-check"></span>Vast number of reports </li>
                    ',
-                
+                   "content_ar" => '
+                   <li class="product-li"><span class="icon la la-check"></span>Role-based Dashboards</li>
+                   <li class="product-li"><span class="icon la la-check"></span>Process-based Dashboards </li>
+                   <li class="product-li"><span class="icon la la-check"></span>Financial Analytics </li>
+                   <li class="product-li"><span class="icon la la-check"></span>Vast number of reports </li>
+                  ',
+               
                 "slug"  => "reports-and-analytics",
                 "icon"  => "scroll",
                 "seo"   => "Reports and Analytics",

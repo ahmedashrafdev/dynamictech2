@@ -32,7 +32,7 @@
                     </p>
                     <h5 class="contact__subheding">{{__('main.sales')}}</h5>
                     <p class="contact__text">
-                        <span><i class="la la-phone"></i> <a href="tel:{{loadText('phone')->value}}">{{loadText('phone')->value}}</a></span>
+                        <span><i class="la la-phone"></i> <a href="tel:{{loadText('sales_phone')->value}}">{{loadText('sales_phone')->value}}</a></span>
                     </p>
                 </div>
             </div><!-- end col-lg-4 col-sm-6 -->
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-lg-7">
                 <div class="section-heading">
-                    <p class="section__meta">#get in touch</p>
+                    <p class="section__meta">{{__('main.get_touch')}}</p>
                     <h2 class="section__title">{{loadText('contact_get_in_touch')->value}}</h2>
                 </div><!-- end section-heading -->
                 <div class="contact-form-action contact-form-item">
@@ -53,36 +53,42 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <i class="la la-user form-icon"></i>
-                                    <input class="form-control" type="text" name="text" placeholder="Name">
+                                    <input class="form-control" type="text" name="name" placeholder="{{__('main.name')}}">
                                 </div><!-- end form-group -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <i class="la la-envelope-o form-icon"></i>
-                                    <input class="form-control" type="email" name="email" placeholder="Email">
+                                    <input class="form-control" type="email" name="email" placeholder="{{__('main.email')}}">
                                 </div><!-- end form-group -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <i class="la la-phone form-icon"></i>
-                                    <input class="form-control" type="text" name="text" placeholder="Number">
+                                    <input class="form-control" type="text" name="subject" placeholder="{{__('main.number')}}">
                                 </div><!-- end form-group -->
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <i class="la la-pencil-square form-icon"></i>
-                                    <input class="form-control" type="text" name="text" placeholder="Subject">
+                                    <input class="form-control" type="text" name="text" placeholder="{{__('main.subject')}}">
+                                </div><!-- end form-group -->
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <i class="la la-building form-icon"></i>
+                                    <input class="form-control" type="text" name="company" placeholder="{{__('main.company')}}">
                                 </div><!-- end form-group -->
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group message-group">
                                     <i class="la la-pencil form-icon"></i>
-                                    <textarea class="form-control message-control" placeholder="Message"></textarea>
+                                    <textarea class="form-control message-control" placeholder="{{__('main.msg')}}"></textarea>
                                 </div><!-- end form-group -->
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group mb-0">
-                                    <button class="theme-btn" type="button">send message <span class="la la-caret-right"></span></button>
+                                    <button class="theme-btn" type="button">{{__('main.send_msg')}} <span class="la la-caret-right"></span></button>
                                 </div><!-- end form-group -->
                             </div>
                         </div>

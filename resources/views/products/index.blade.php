@@ -5,51 +5,79 @@
 @section('content')
 
 <!--======================================
-        START INFO AREA 4
-======================================-->
-<section class="info-box-area section-padding-top">
+        START SERVICE AREA
+ ======================================-->
+ <section class="service-area-2 section-padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading text-center">
-                    <h5 class="section__meta">#{{__('main.products')}}</h5>
-                    <h2 class="section__title">{{__('main.what_we_offer')}}</h2>
-                    <div class="section-divider mx-auto"></div>
+                    <h2 class="section__title">{!! loadText('our_proucts')->value !!}</h2>
                 </div><!-- end section-heading -->
             </div><!-- end col-lg-12 -->
         </div><!-- end row -->
-        <div class="row info-box-wrap">
-            @forelse ($allProducts as $product)
-                <div class="col-lg-4 col-sm-6">
-                    <div class="info-box-item info-box-item-4">
-                        <div class="info-header">
-                            <svg class="infobg__svg" width="180" height="180" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                <g transform="translate(300,300)">
-                                    <path d="M125.6,-88.7C153,-25,158.8,35,134.2,52.8C109.7,70.7,54.8,46.3,9.7,40.8C-35.5,35.2,-71,48.3,-103.2,26.1C-135.4,3.8,-164.3,-53.8,-146.5,-111.9C-128.7,-170,-64.4,-228.5,-7.6,-224.1C49.1,-219.7,98.1,-152.3,125.6,-88.7Z" />
-                                </g>
-                            </svg>
-                            @if ($product->icon !== 'salesforce')
-                                <i class="la la-{{$product->icon}} info__svg service-icon"></i>
-                            @else
-                                <i class="lab la-{{$product->icon}} info__svg service-icon"></i>
-                            @endif
-
-                        </div>
-                        <div class="info-body">
-                            <h3 class="info__title"><a href="{{route('product' , ['slug' => $product->slug])}}">{{$product->title}}</a> </h3>
-                            <p class="info__text">
-                                {{$product->breif}}
-                            </p>
-                    </div>
-                </div><!-- end info-box-item info-box-item-4 -->
+        <div class="row service-wrap">
+            <div class="col-lg-12">
+                <div class="service-nav">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        @foreach ($products as $index =>  $product)
+                            <li class="nav-item">
+                                <a title="{{$product->seo}}" class="nav-link {{$index == 0 ? 'active' : ''}}" id="nav-{{$product->slug}}" data-toggle="tab" href="#{{$product->slug}}" role="tab" aria-controls="{{$product->slug}}"
+                                    aria-selected="true">
+                                    <i class="las la-{{$product->icon}}"></i>    
+                                    <span class="nav-link__text">{{$product->title}}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div><!-- end service-nav -->
             </div><!-- end col-lg-4 -->
-            @empty
-            <p class="no-products">{{__('main.no_products_avilable')}}</p>
-            @endforelse
+            <div class="col-lg-12 mr-auto">
+                <div class="service-content-wrap">
+                    <div class="tab-content" id="myTabContent">
+                        @foreach ($products as $index => $product)
+                            <div class="tab-pane fade  {{$index === 0 ? 'active show' : ''}}" id="{{$product->slug}}" role="tabpanel" aria-labelledby="{{$product->slug}}">
+                                <div class="service-content">
+                                    {{-- <img class="service__img" src="{{loadImage($product->image)}}" alt="{{$product->seo}}"> --}}
+                                    <h3 class="service__title">{{$product->title}}</h3>
+                                    <p class="service__text">
+                                        {{$product->breif}}
+                                    </p>
+                                    <div class="row feature-content-wrap">
+                                        @foreach ($modoules as $modoule)
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a href="{{route('product' , ['slug' => $modoule->slug])}}">
+                                            <div class="feature-item feature-item-2 feature-box-color">
+                                                <div class="hover-overlay"></div>
+                                                <div class="feature__icon">
+                                                    @if ($modoule->icon === 'salesforce')
+                                                    <i class="lab la-{{$modoule->icon}}"></i>
+                                                    @else
+                                                    <i class="la la-{{$modoule->icon}}"></i>
+                                                    @endif
+                                                </div>
+                                                <h3 class="feature__title"><a href="{{route('product' , ['slug' => $modoule->slug])}}">{{$modoule->title}}</a></h3>
+                                            </div><!-- end feature-item -->
+                                        </a>
+                                        </div><!-- end col-lg-3 -->
+                                        
+                                            
+                                        @endforeach
+                                    </div><!-- end row -->
+                                    {{-- <a title="{{$product->seo}}" href="{{route('product' , ['slug' => $product->slug])}}" class="service__btn">learn more
+                                        <span class="la la-caret-right"></span>
+                                    </a> --}}
+                                </div>
+                            </div>
+                        @endforeach
+                      
+                    </div>
+                </div>
+            </div><!-- end col-lg-8 -->
         </div><!-- end row -->
     </div><!-- end container -->
-</section><!-- end info-area -->
+</section><!-- end service-area -->
 <!--======================================
-        END INFO AREA
+        END SERVICE AREA
 ======================================-->
 @endsection

@@ -41,3 +41,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::put('/text/update/{slug}',[HomePageController::class , 'updateText'])->name('update_text');
     Route::put('/text/update/images/{slug}',[HomePageController::class , 'updateTextImages'])->name('update_text_images');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" sizes="16x16" href="{{asset('storage/images/logo.png')}}">
+    <link rel="icon" sizes="16x16" href="{{asset('storage/images/icon.png')}}">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="{{asset('css/all.css')}}" rel="stylesheet">
     @if (App::isLocale('ar'))
     <link rel="stylesheet" href="{{ mix('css/rtl.css') }}">

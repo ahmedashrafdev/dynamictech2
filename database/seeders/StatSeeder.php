@@ -17,22 +17,26 @@ class StatSeeder extends Seeder
         $stats = [
             [
                 'record' => 'Years of experience',
+                'record_ar' => 'Years of experience',
                 'icon' => 'check-circle-o',
                 'value' => '15',
             ],
             [
                 'record' => 'Worldwide Customers',
+                'record_ar' => 'Worldwide Customers',
                 'icon' => 'users',
                 'value' => '1000',
             ],
             
             [
                 'record' => 'Lines Of Codes',
+                'record_ar' => 'Lines Of Codes',
                 'icon' => 'file-code',
                 'value' => '77785',
             ],
             [
                 'record' => 'modules',
+                'record_ar' => 'modules',
                 'icon' => 'clipboard',
                 'value' => '450',
             ],

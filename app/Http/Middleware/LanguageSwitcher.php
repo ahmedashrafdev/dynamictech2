@@ -23,7 +23,7 @@ class LanguageSwitcher
         if (!Session::has('locale'))
         {
           Session::put('locale',Config::get('app.locale'));
-       }
+        }
        App::setLocale(session('locale'));
        return $next($request);
     }

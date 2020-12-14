@@ -8,7 +8,7 @@
     </svg>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="footer-item">
                     <div class="logo">
                     <a href="{{route('home')}}" class="foot-logo"><img src="{{asset('storage/images/logo.png')}}" alt="logo"></a>
@@ -18,9 +18,10 @@
                     </p>
                     <div class="footer-contact">
                         <p class="contact__text">
-                            <span class="contact__text-title font-weight-medium text-black-50">Address:</span> {{loadText('address')->value}} <br>
-                            <span class="contact__text-title font-weight-medium text-black-50">Phone:</span> {{loadText('phone')->value}} <br>
-                            <span class="contact__text-title font-weight-medium text-black-50">Email:</span>
+                            <i style="margin-right:10px" class="la la-map-marker"></i><span class="contact__text-title font-weight-medium text-black-50">{{__('main.address')}}:</span>{{loadText('address')->value}} <br>
+                            <i style="margin-right:10px" class="la la-phone"></i><span class="contact__text-title font-weight-medium text-black-50">{{__('main.phone')}}:</span> {{loadText('phone')->value}} <br>
+                            <i style="margin-right:10px" class="la la-phone"></i><span class="contact__text-title font-weight-medium text-black-50">{{__('main.sales')}}:</span> {{loadText('sales_phone')->value}} <br>
+                            <i style="margin-right:10px" class="la la-envelope"></i><span class="contact__text-title font-weight-medium text-black-50">{{__('main.email')}}:</span>
                         <a href="mailto:{{loadText('email')->value}}">{{loadText('email')->value}}</a>
                         </p>
                     </div>
@@ -31,7 +32,7 @@
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="footer-item">
                     <h4 class="footer__title">{{__('main.company')}}</h4>
                     <div class="section-divider"></div>
@@ -47,7 +48,7 @@
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
-            <div class="col-lg-2 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
                 <div class="footer-item">
                     <h4 class="footer__title">{{__('main.products')}}</h4>
                     <div class="section-divider"></div>
@@ -59,61 +60,6 @@
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-2 -->
-            <div class="col-lg-4 col-sm-6">
-                <div class="footer-item testimonials">
-                    <h4 class="footer__title">{{__('main.testemonials')}}</h4>
-                    <div class="section-divider"></div>
-                    <div class="contact-form-action">
-                        <div class="testimonial-item-wrap-2 testimonial-carousel text-left">
-                            @foreach ($testemonials as $testemonial)
-                                <div class="testimonial-item">
-                                    <div class="testimonial-desc">
-                                        <p class="testimonial__desc">
-                                           {{$testemonial->content}}
-                                        </p>
-                                    </div><!-- end testimonial-desc -->
-                                    <div class="testimonial-author">
-                                        <img src="{{loadImage($testemonial->image)}}" alt="{{$testemonial->seo}}">
-                                        <div class="author-detail">
-                                        <h3 class="author__title">{{$testemonial->name}}</h3>
-                                            <span class="author__meta">{{$testemonial->title}}</span>
-                                            <span class="author__rating">
-                                                <i class="la la-star"></i>
-                                                <i class="la la-star"></i>
-                                                <i class="la la-star"></i>
-                                                <i class="la la-star"></i>
-                                                <i class="la la-star"></i>
-                                            </span>
-                                        </div>
-                                    </div><!-- end testimonial-author -->
-                                </div><!-- end testimonial-item --> 
-                            @endforeach
-                            <div class="testimonial-item">
-                                <div class="testimonial-desc">
-                                    <p class="testimonial__desc">
-                                        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of
-                                        spring which I enjoy with my whole heart.
-                                    </p>
-                                </div><!-- end testimonial__desc -->
-                                <div class="testimonial-author">
-                                    <img src="http://techydevs.com/demos/themes/html/demo/prizon/images/team2.jpg" alt="small-avatar">
-                                    <div class="author-detail">
-                                        <h3 class="author__title">Josh Purdila</h3>
-                                        <span class="author__meta">Product Manager</span>
-                                        <span class="author__rating">
-                                             <i class="la la-star"></i>
-                                             <i class="la la-star"></i>
-                                             <i class="la la-star"></i>
-                                             <i class="la la-star"></i>
-                                             <i class="la la-star"></i>
-                                        </span>
-                                    </div>
-                                </div><!-- end testimonial-author -->
-                            </div><!-- end testimonial-item -->
-                        </div><!-- end testimonial-wrap -->
-                    </div><!-- end contact-form-action -->
-                </div><!-- end footer-item -->
-            </div><!-- end col-lg-4 -->
         </div><!-- end row -->
         <div class="row">
             <div class="col-lg-12">

@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
             ClientsSeeder::class,
             PostSeeder::class,
             TeamSeeder::class,
-            UserSeeder::class,
             TestemonialSeeder::class,
     
         ]);

@@ -17,8 +17,9 @@ html{
     direction: ltr !important;
 
 }
-.body ,  .slide-item-tablecell .row .col-lg-12 .banner-content , .col-lg-6 ,.logo-box, .col-lg-7 ,.nav-link , .section-heading ,.footer-item , .testimonial__desc ,.info-list.contacts , .breadcrumb__title , .accordion .card .card-header .btn-link , .text-left,.info-box-item-4{
+.body ,.contact-heading,  .slide-item-tablecell .row .col-lg-12 .banner-content , .col-lg-6 ,.logo-box, .col-lg-7 ,.nav-link , .section-heading ,.footer-item , .testimonial__desc ,.info-list.contacts , .breadcrumb__title , .accordion .card .card-header .btn-link , .text-left,.info-box-item-4{
     text-align: right;
+    font-family:"Cairo" , sans-serif; 
 }
 .about-area2 .about-item .list-items li h3{
     margin-right: 65px;
@@ -134,4 +135,18 @@ element {
 .header-right-info .info-list li .theme-btn {
     padding-left: 45px;
     padding-right: 25px;
+}
+.contact-form-action form .form-group .form-control {
+    padding: 12px 40px 12px 20px;
+}
+.contact-form-action form .form-group .form-icon {
+   
+    right: 20px;
+    left: auto;
+    top:20px    
+
+}
+
+.la-phone{
+    transform: rotateY(180deg);
 }

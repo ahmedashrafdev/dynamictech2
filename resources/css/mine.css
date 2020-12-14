@@ -124,3 +124,19 @@ display: none;
 .navbar-icon{
   width:30px;
 }
+
+.main-menu ul li.sm-icon a::after{
+  width: 0!important;
+  display: none!important;
+}
+
+.client-img{
+  padding: 0px !important;
+}
+
+.our-clients .client-logo-item-div img.client-img {
+  
+  padding: 0;
+  opacity: 1;
+  
+}

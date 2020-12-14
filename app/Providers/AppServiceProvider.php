@@ -30,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
         $testemonials =  Testemonial::get();
         $socialMedia = loadText('' , 'social_media');
         $contacts = loadText('' , 'contacts');
-       
         $logo = loadImage(loadText('logo')->image);
         $seo = loadText('seo')->value;
-        view()->share(['products'=> $products  , 'socialMedia' => $socialMedia , 'logo' => $logo, 'seo' => $seo , 'contacts' => $contacts , 'testemonials' => $testemonials]);
+        $modoules = Product::findBySlug('NEXT-ERP')->children;
+        view()->share(['products'=> $products , 'modoules' => $modoules  , 'socialMedia' => $socialMedia , 'logo' => $logo, 'seo' => $seo , 'contacts' => $contacts , 'testemonials' => $testemonials]);
     }
 }
